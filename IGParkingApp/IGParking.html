@@ -1,0 +1,20 @@
+<template name="mainLayout">
+	<head>
+		<title>IGParking</title>
+	</head>
+	<body>
+		{{> yield}}
+	</body>
+</template>
+
+<template name="parking">
+	<h1>Park in</h1>
+
+	{{#if hasFreeSpots}}
+	<div>HAY LUGAR ({{freeSpotsCount}})</div>
+	{{else}}
+	<div>NO HAY LUGAR</div>
+	{{/if}}
+
+	<!--button id="refresh">Refresh</button-->
+</template>
