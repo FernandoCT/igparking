@@ -1,6 +1,9 @@
 <template name="mainLayout">
 	<head>
-		<title>IGParking</title>
+		<meta charset="UTF-8">
+        <title>Park In</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		{{> yield}}
@@ -8,13 +11,23 @@
 </template>
 
 <template name="parking">
-	<h1>Park in</h1>
-
 	{{#if hasFreeSpots}}
-	<div>HAY LUGAR ({{freeSpotsCount}})</div>
+		<div class="main available">
+            <div class="image">
+                <img src="images/002.gif" alt="" />
+            </div>
+            <div class="text">
+                Lugar <strong>disponible</strong> :)
+            </div>
+        </div>
 	{{else}}
-	<div>NO HAY LUGAR</div>
+		<div class="main not-available">
+            <div class="image">
+                <img src="images/003.gif" alt="" />
+            </div>
+            <div class="text">
+                <strong>No hay</strong> lugar :(
+            </div>
+        </div>
 	{{/if}}
-
-	<!--button id="refresh">Refresh</button-->
 </template>
