@@ -1,0 +1,39 @@
+<template name="mainLayout">
+	<head>
+		<meta charset="UTF-8">
+        <title>Park In</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		{{> yield}}
+	</body>
+</template>
+
+<template name="parking">
+	{{#if hasFreeSpots}}
+		<div class="main available">
+            <div class="image">
+                <img src="images/002.gif" alt="" />
+            </div>
+            <div class="text">
+                Lugar <strong>disponible</strong> :)
+            </div>
+            <div class="button">
+                <a href="">Te avisaremos si quedas sin espacio</a>
+            </div>
+        </div>
+	{{else}}
+		<div class="main not-available">
+            <div class="image">
+                <img src="images/003.gif" alt="" />
+            </div>
+            <div class="text">
+                <strong>No hay</strong> lugar :(
+            </div>
+            <div class="button">
+                <a href="">Te avisaremos si alguno se desocupa</a>
+            </div>
+        </div>
+	{{/if}}
+</template>
